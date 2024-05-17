@@ -1,0 +1,88 @@
+/* Body styling */
+body {
+  background-color: #343a40; /* Warna background gelap */
+  color: #151515; /* Warna teks menjadi putih */
+}
+
+/* Styling untuk tombol navigasi */
+.nav-pills .nav-link {
+  transition: background-color 0.3s; /* Efek transisi untuk perubahan warna latar belakang */
+}
+
+/* Efek hover untuk tombol navigasi */
+.nav-pills .nav-link:hover {
+  background-color: rgba(
+    163,
+    208,
+    255,
+    0.7
+  ) !important; /* Efek transparansi pada warna latar belakang saat dihover */
+  color: #ffffff !important; /* Warna teks menjadi putih */
+}
+
+/* Styling untuk container */
+.container {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Warna latar belakang semi-transparan */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Efek bayangan yang lebih menonjol */
+}
+
+/* Styling untuk judul */
+h1,
+h2 {
+  font-family: "Arial", sans-serif;
+  color: #ffffff; /* Warna teks menjadi putih */
+}
+
+/* Styling untuk tombol */
+.btn {
+  border-radius: 50px;
+}
+
+/* Styling untuk label pada form */
+.form-group label {
+  font-weight: bold;
+}
+
+/* Styling untuk avatar pengguna */
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+/* Styling untuk pesan alert */
+.alert {
+  font-weight: bold;
+}
+
+/* Styling untuk kartu (card) */
+.card {
+  margin-top: 20px;
+}
+
+/* Styling untuk item dalam daftar (list group) */
+.list-group-item {
+  background-color: #ffffff; /* Warna latar belakang item list */
+  border: 1px solid rgba(0, 0, 0, 0.125); /* Tambahkan border agar item list lebih terpisah */
+  margin-bottom: 5px; /* Berikan margin bawah untuk memberikan jarak antar item */
+}
+
+/* Styling saat item list dihover */
+.list-group-item:hover {
+  background-color: #f8f9fa; /* Warna latar belakang saat dihover agar terlihat */
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  /* background-color: #007bff; */
+}

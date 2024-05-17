@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRUD Application</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">CRUD Application</h1>
+      <ul class="nav nav-pills nav-fill mb-4">
+        <li class="nav-item">
+          <a class="nav-link active" id="nav-create">Create</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-read-all">Read All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-read-id">Read by ID</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-update">Update</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-delete">Delete</a>
+        </li>
+      </ul>
+
+      <!-- Alert Messages -->
+      <div id="alertMessage" class="alert" role="alert"></div>
+
+      <!-- Create Form -->
+      <div id="create-form">
+        <h2>Create User</h2>
+        <form id="createUserForm" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="createName">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="createName"
+              placeholder="Enter name"
+              required
+            />
+            <div class="invalid-feedback">Please provide a name.</div>
+          </div>
+          <div class="form-group">
+            <label for="createAvatar">Avatar URL</label>
+            <input
+              type="text"
+              class="form-control"
+              id="createAvatar"
+              placeholder="Enter avatar URL"
+              required
+            />
+            <div class="invalid-feedback">Please provide an avatar URL.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+      </div>
+
+      <!-- Read All Users -->
+      <div id="read-all" style="display: none">
+        <h2>All Users</h2>
+        <button id="readUsersBtn" class="btn btn-secondary mb-3">
+          Read All Users
+        </button>
+        <div id="usersContainer"></div>
+      </div>
+
+      <!-- Read User by ID -->
+      <div id="read-id" style="display: none">
+        <h2>Read User by ID</h2>
+        <form id="readUserForm" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="readId">User ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="readId"
+              placeholder="Enter user ID"
+              required
+            />
+            <div class="invalid-feedback">Please provide a user ID.</div>
+          </div>
+          <button type="submit" class="btn btn-secondary">Read User</button>
+        </form>
+        <div id="userContainer"></div>
+      </div>
+
+      <!-- Update User -->
+      <div id="update-form" style="display: none">
+        <h2>Update User</h2>
+        <form id="updateUserForm" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="updateId">User ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="updateId"
+              placeholder="Enter user ID"
+              required
+            />
+            <div class="invalid-feedback">Please provide a user ID.</div>
+          </div>
+          <div class="form-group">
+            <label for="updateName">New Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="updateName"
+              placeholder="Enter new name"
+              required
+            />
+            <div class="invalid-feedback">Please provide a new name.</div>
+          </div>
+          <div class="form-group">
+            <label for="updateAvatar">New Avatar URL</label>
+            <input
+              type="text"
+              class="form-control"
+              id="updateAvatar"
+              placeholder="Enter new avatar URL"
+              required
+            />
+            <div class="invalid-feedback">Please provide a new avatar URL.</div>
+          </div>
+          <button type="submit" class="btn btn-warning">Update</button>
+        </form>
+      </div>
+
+      <!-- Delete User -->
+      <div id="delete-form" style="display: none">
+        <h2>Delete User</h2>
+        <form id="deleteUserForm" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="deleteId">User ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="deleteId"
+              placeholder="Enter user ID"
+              required
+            />
+            <div class="invalid-feedback">Please provide a user ID.</div>
+          </div>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Bootstrap validation
+      (function () {
+        "use strict";
+        window.addEventListener(
+          "load",
+          function () {
+            var forms = document.getElementsByClassName("needs-validation");
+            Array.prototype.filter.call(forms, function (form) {
+              form.addEventListener(
+                "submit",
+                function (event) {
+                  if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+                  form.classList.add("was-validated");
+                },
+                false
+              );
+            });
+          },
+          false
+        );
+      })();
+    </script>
+  </body>
+</html>
